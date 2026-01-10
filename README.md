@@ -1,47 +1,77 @@
-# AudienceSnap
-Its a analytics app built for small creators to manage their audience and their clicks.
-With this you can add a AudienceSnap link in your bio which can maintain multiple links inside it.
-The creator then can login into their account and check the analytics/behaviour/interaction of their audience such as number of clicks their CTA ratio etc.
-# What problem this solves
-Many creators faces the issue of not knowing their audience well so they can't target them. With *AudienceSnap* we can know the behaviour of the audience and then earn revenue according to the type of audience.
-# Who it’s for
-Well anybody having an audience can benifit from this however this is particularly designed by keeping in mind the need of small creators.
+# 🎯 AudienceSnap
 
-# Core features
-One bio link page- Share a single link in your Instagram bio that opens a page with all your important links.
+AudienceSnap is a simple analytics tool built for small creators to track which links their audience actually clicks. It’s designed for creators who want to understand audience behavior from one shared link — like the one in their Instagram bio.
 
-Add & manage links- Add any URL, give it a title, reorder it, or turn it on/off anytime.
+---
 
-Click tracking- Every time someone clicks a link, it’s automatically tracked.
+## 📦 What Problem This Solves
 
-Simple analytics- See total clicks, today’s clicks, and which link performs best.
+Creators often share multiple links (YouTube, products, forms, etc.) but have no real way of knowing *which ones their audience is clicking*. AudienceSnap solves this by tracking link clicks and giving creators simple performance data.
 
-Mobile-friendly- Works cleanly on phones (where your audience actually is).
+---
 
-# User flow
-~A creator signs up using their email
+## 👥 Who It’s For
 
-~The creator adds the links they want to share with their audience
+AudienceSnap is ideal for:
+- Small creators on Instagram
+- Micro-influencers
+- Content makers with multiple online pages
+- Anyone who wants simple engagement data from shared links
 
-~The app generates a single public page link for the creator
+---
 
-~The creator places this link in their Instagram bio
+## 🚀 Core Features
 
-~Followers open the page and click on any link
+- **One bio link page** — A single link creators can add to their Instagram or other social bios.
+- **Add and manage links** — Creators can add any URL, add a title, and reorder or disable links.
+- **Click tracking** — Every click on a link is recorded automatically.
+- **Simple analytics** — Shows total clicks, today’s clicks, and which link is most clicked.
+- **Mobile-friendly** — Designed to work well on phones (where most audiences click).
 
-~Each click is tracked automatically
+---
 
-~The creator views simple analytics showing link performance
+## 🔁 User Flow
 
-# What's not included 
-No content hosting- (We do not host videos, images, or posts. Links redirect to external platforms.)
+1. Creator signs up with email.
+2. Creator adds links they want to share.
+3. System generates a public page link.
+4. Creator places this link in their bio.
+5. Followers click links on the page.
+6. Clicks are tracked and shown in analytics.
 
-No advanced analytics- (No audience demographics, heatmaps, or AI insights.)
+---
 
-No monetization tools- (No payments, subscriptions, or affiliate tracking.)
+## 🚫 What’s Not Included
 
-No social media integrations- (No direct Instagram, YouTube, or API integrations.)
+- Content hosting (videos, images, or posts)
+- Advanced analytics (heatmaps, demographic data, etc.)
+- Monetization (payments, subscriptions, affiliate tracking)
+- Social media API integrations
+- Custom themes or page designs
+- Team/multi-user accounts
 
-No customization or themes- (No custom designs, colors, or fonts.)
+---
 
-No teams or multiple users per account- (Each account is for a single creator.)
+## 🛠 Tech Stack
+
+This project uses:
+- **Node.js + Express** (backend)
+- **PostgreSQL** (database)
+- **React** (frontend)
+- **Render / Railway / Fly.io** (hosting when deployed)
+
+---
+
+## 💻 How to Run Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Vamp-harshit/AudienceSnap.git
+2. Install dependencies:
+   ```bash
+   npm install
+3. Add environment variables (e.g., database URL, JWT secret).
+   
+4. Start server and frontend:
+   ```bash
+   npm run dev
