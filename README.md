@@ -20,11 +20,17 @@ Mobile-friendly- Works cleanly on phones (where your audience actually is).
 
 # User flow
 ~A creator signs up using their email
+
 ~The creator adds the links they want to share with their audience
+
 ~The app generates a single public page link for the creator
+
 ~The creator places this link in their Instagram bio
+
 ~Followers open the page and click on any link
+
 ~Each click is tracked automatically
+
 ~The creator views simple analytics showing link performance
 
 # What's not included 
