@@ -1,0 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import PublicProfile from "./pages/PublicProfile";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/u/:username" element={<PublicProfile />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
