@@ -19,7 +19,7 @@ export default function Login() {
       localStorage.setItem("token", res.data.token);
 
       // redirect
-      window.location.href = "/dashboard";
+      window.location.href = "https://audiencesnap-r385.onrender.com/dashboard";
     } catch (err) {
       console.log(err.response?.data || err.message);
       alert("Login failed");
