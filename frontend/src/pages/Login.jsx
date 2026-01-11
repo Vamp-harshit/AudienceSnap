@@ -1,25 +1,24 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";  // Import Link from react-router-dom
-import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import api from "../services/api";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("https://audiencesnap-r385.onrender.com/auth/login", {
-        email,
-        password,
-      });
+      const res = await api.post("/auth/login", { email, password });
 
       // 🔑 SAVE TOKEN
       localStorage.setItem("token", res.data.token);
 
-      // redirect
-      window.location.href = "https://audiencesnap-r385.onrender.com/dashboard";
+      // navigate within frontend app (keep frontend origin)
+      navigate("/dashboard");
     } catch (err) {
       console.log(err.response?.data || err.message);
       alert("Login failed");
