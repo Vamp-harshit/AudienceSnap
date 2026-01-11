@@ -68,7 +68,7 @@ useEffect(() => {
   fetchUsername();
 }, []);
 
-const profileUrl = `http://localhost:5173/u/${username}`;
+const profileUrl = `https://audiencesnap-r385.onrender.com/u/${username}`;
 
 
 
@@ -405,7 +405,7 @@ const deleteLink = async (id) => {
   >
     {/* LINK */}
     <a
-      href={`http://localhost:5000/click/${link.id}`}
+      href={`https://audiencesnap-r385.onrender.com/click/${link.id}`}
       target="_blank"
       rel="noreferrer"
       style={{
