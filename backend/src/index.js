@@ -1,28 +1,30 @@
-const express = require("express");
+const analyticsRoutes = require("./routes/analytics");
 const cors = require("cors");
+const express = require("express");
 require("dotenv").config();
 
 const authRoutes = require("./routes/auth");
-const analyticsRoutes = require("./routes/analytics");
-const linksRoutes = require("./routes/links");
-const publicRoutes = require("./routes/public");
-const clickRoutes = require("./routes/clicks");
 
 const app = express();
-
 app.use(cors({
-  origin: "https://audiencesnap.onrender.com",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  credentials: true,
 }));
 
 app.use(express.json());
+app.use("/analytics", analyticsRoutes);
+app.use("/analytics", require("./routes/analytics"));
 
 app.use("/auth", authRoutes);
-app.use("/analytics", analyticsRoutes);
+const linksRoutes = require("./routes/links");
+
 app.use("/links", linksRoutes);
-app.use("/u", publicRoutes);
-app.use("/click", clickRoutes);
+const publicRoutes = require("./routes/public");
+
+app.use("/", publicRoutes);
+const clickRoutes = require("./routes/clicks");
+
+app.use("/", clickRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
