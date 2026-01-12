@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+const app = express();
+
 app.get("/health", (req, res) => {
   res.status(200).send("Server is awake");
 });
@@ -11,7 +13,6 @@ const linksRoutes = require("./routes/links");
 const publicRoutes = require("./routes/public");
 const clickRoutes = require("./routes/clicks");
 
-const app = express();
 
 // Middleware
 app.use(cors({
