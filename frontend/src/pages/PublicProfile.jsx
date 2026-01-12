@@ -81,10 +81,7 @@ export default function PublicProfile() {
             >
               {links.map((l) => (
                 <li key={l.id}>
-                  <a
-                    href={`http://localhost:5000/click/${l.id}`}
-                    target="_blank"
-                    rel="noreferrer"
+                 <a href={`https://audiencesnap.onrender.com/click/${l.id}`} target="_blank" rel="noreferrer"
                     style={{ textDecoration: "none" }}
                   >
                     <div
