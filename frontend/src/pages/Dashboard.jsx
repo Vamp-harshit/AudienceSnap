@@ -69,8 +69,7 @@ useEffect(() => {
 }, []);
 //changes it
 
-const profileUrl = `https://audiencesnap-r385.onrender.com/u/${username}`;
-
+const profileUrl = `${window.location.origin}/u/${username}`;
 
 
   const fetchLinks = async () => {
