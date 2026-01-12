@@ -1,31 +1,33 @@
-const analyticsRoutes = require("./routes/analytics");
-const cors = require("cors");
 const express = require("express");
+const cors = require("cors");
 require("dotenv").config();
 
+// Import Routes
 const authRoutes = require("./routes/auth");
+const analyticsRoutes = require("./routes/analytics");
+const linksRoutes = require("./routes/links");
+const publicRoutes = require("./routes/public");
+const clickRoutes = require("./routes/clicks");
 
 const app = express();
+
+// Middleware
 app.use(cors({
   origin: process.env.FRONTEND_URL || "http://localhost:5173",
   credentials: true,
 }));
-
 app.use(express.json());
-app.use("/analytics", analyticsRoutes);
-app.use("/analytics", require("./routes/analytics"));
 
+// Route Middleware
 app.use("/auth", authRoutes);
-const linksRoutes = require("./routes/links");
-
+app.use("/analytics", analyticsRoutes);
 app.use("/links", linksRoutes);
-const publicRoutes = require("./routes/public");
 
+// Root level routes
 app.use("/", publicRoutes);
-const clickRoutes = require("./routes/clicks");
-
 app.use("/", clickRoutes);
 
+// Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
