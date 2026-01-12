@@ -1,7 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-
+app.get("/health", (req, res) => {
+  res.status(200).send("Server is awake");
+});
 // Import Routes
 const authRoutes = require("./routes/auth");
 const analyticsRoutes = require("./routes/analytics");
