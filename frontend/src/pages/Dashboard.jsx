@@ -405,7 +405,7 @@ const deleteLink = async (id) => {
   >
     {/* LINK */}
     <a
-      href={`https://audiencesnap-r385.onrender.com/click/${link.id}`}
+      href={`https://audiencesnap.onrender.com/click/${link.id}`}
       target="_blank"
       rel="noreferrer"
       style={{
