@@ -16,27 +16,26 @@ export default function PublicProfile() {
       .finally(() => setLoading(false));
   }, [username]);
 
+  // Placeholder avatar URL — replace this with real user avatar URL if you have one
   const avatarUrl =
-    "https://marketplace.canva.com/EAFe2X15otQ/1/0/1600w/canva-red-black-illustrative-man-3d-avatar-4oF1bAeGYrg.jpg";
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
 
   return (
     <div
       style={{
-        minHeight: "100vh", // Changed to 100vh for full height
-        padding: "60px 24px 20px 24px", // Added bottom padding
+        minHeight: "83.5vh",
+        padding: "60px 24px",
         backgroundImage:
           "url('https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        display: "flex", // Enable Flexbox
-        flexDirection: "column", // Stack children vertically
       }}
     >
-      {/* Content wrapper with flex: 1 pushes the footer down */}
-      <div className="max-w-xl mx-auto text-center" style={{ flex: 1 }}>
+      <div className="max-w-xl mx-auto text-center">
+        {/* Avatar */}
         <img
-          src={avatarUrl}
+          src={"https://marketplace.canva.com/EAFe2X15otQ/1/0/1600w/canva-red-black-illustrative-man-3d-avatar-4oF1bAeGYrg.jpg"}
           alt={`${username} avatar`}
           style={{
             width: "120px",
@@ -50,6 +49,7 @@ export default function PublicProfile() {
           }}
         />
 
+        {/* Username */}
         <h1
           style={{ marginTop: "-12px" }}
           className="text-5xl font-extrabold text-white mb-12 drop-shadow-xl"
@@ -57,6 +57,7 @@ export default function PublicProfile() {
           {username}
         </h1>
 
+        {/* Card */}
         <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8">
           {loading ? (
             <div className="flex flex-col items-center py-20">
@@ -112,6 +113,7 @@ export default function PublicProfile() {
                           "rgba(255,255,255,0.2)";
                       }}
                     >
+                      {/* Icon */}
                       <svg
                         style={{ marginRight: "14px", color: "white" }}
                         fill="none"
@@ -128,6 +130,7 @@ export default function PublicProfile() {
                         />
                       </svg>
 
+                      {/* Title */}
                       <span
                         style={{
                           color: "white",
@@ -145,10 +148,9 @@ export default function PublicProfile() {
             </ul>
           )}
         </div>
-      </div>
 
-      {/* Footer is now outside the content wrapper and styled for visibility */}
-      <footer 
+        {/* Footer spacing */}
+<footer 
         style={{ 
           textAlign: "center", 
           padding: "20px 0", 
@@ -169,6 +171,7 @@ export default function PublicProfile() {
           AudienceSnap
         </a>
       </footer>
+      </div>
     </div>
   );
 }
