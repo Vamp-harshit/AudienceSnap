@@ -16,27 +16,27 @@ export default function PublicProfile() {
       .finally(() => setLoading(false));
   }, [username]);
 
-  // Placeholder avatar URL — replace this with real user avatar URL if you have one
-  const avatarUrl =
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
-
   return (
     <div
       style={{
-        minHeight: "83.5vh",
+        // Use 100vh and flexbox to push footer to bottom
+        minHeight: "100vh",
         display: "flex",
+        flexDirection: "column",
         padding: "60px 24px 20px 24px",
         backgroundImage:
           "url('https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
       }}
     >
-      <div className="max-w-xl mx-auto text-center">
+      {/* Main Content Wrapper - flex-grow pushes everything else down */}
+      <div className="flex-grow flex flex-col items-center w-full">
         {/* Avatar */}
         <img
-          src={"https://marketplace.canva.com/EAFe2X15otQ/1/0/1600w/canva-red-black-illustrative-man-3d-avatar-4oF1bAeGYrg.jpg"}
+          src="https://marketplace.canva.com/EAFe2X15otQ/1/0/1600w/canva-red-black-illustrative-man-3d-avatar-4oF1bAeGYrg.jpg"
           alt={`${username} avatar`}
           style={{
             width: "120px",
@@ -46,7 +46,6 @@ export default function PublicProfile() {
             border: "4px solid white",
             boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
             marginBottom: "16px",
-            display: "inline-block",
           }}
         />
 
@@ -58,8 +57,11 @@ export default function PublicProfile() {
           {username}
         </h1>
 
-        {/* Card */}
-        <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8">
+        {/* Card Container - Set to 80% width */}
+        <div 
+          className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8 mb-8"
+          style={{ width: "80%", maxWidth: "1000px" }} 
+        >
           {loading ? (
             <div className="flex flex-col items-center py-20">
               <div className="w-12 h-12 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin mb-4" />
@@ -74,7 +76,7 @@ export default function PublicProfile() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "14px",
+                gap: "16px",
                 listStyle: "none",
                 padding: 0,
                 margin: 0,
@@ -82,15 +84,15 @@ export default function PublicProfile() {
             >
               {links.map((l) => (
                 <li key={l.id}>
-                 <a href={`https://audiencesnap.onrender.com/click/${l.id}`} target="_blank" rel="noreferrer"
+                  <a 
+                    href={`https://audiencesnap.onrender.com/click/${l.id}`} 
+                    target="_blank" 
+                    rel="noreferrer"
                     style={{ textDecoration: "none" }}
                   >
                     <div
                       style={{
-                        marginLeft: "10%",
-                        marginRight: "10%",
-                        background:
-                          "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                         padding: "22px",
                         borderRadius: "14px",
                         transition: "all 0.3s ease",
@@ -101,20 +103,16 @@ export default function PublicProfile() {
                         boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.transform = "translateX(6px)";
-                        e.currentTarget.style.boxShadow =
-                          "0 16px 35px rgba(0,0,0,0.35)";
+                        e.currentTarget.style.transform = "translateY(-3px)";
+                        e.currentTarget.style.boxShadow = "0 16px 35px rgba(0,0,0,0.35)";
                         e.currentTarget.style.borderColor = "#ffffff";
                       }}
                       onMouseOut={(e) => {
-                        e.currentTarget.style.transform = "translateX(0)";
-                        e.currentTarget.style.boxShadow =
-                          "0 10px 25px rgba(0,0,0,0.25)";
-                        e.currentTarget.style.borderColor =
-                          "rgba(255,255,255,0.2)";
+                        e.currentTarget.style.transform = "translateY(0)";
+                        e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.25)";
+                        e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
                       }}
                     >
-                      {/* Icon */}
                       <svg
                         style={{ marginRight: "14px", color: "white" }}
                         fill="none"
@@ -130,8 +128,6 @@ export default function PublicProfile() {
                           d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                         />
                       </svg>
-
-                      {/* Title */}
                       <span
                         style={{
                           color: "white",
@@ -149,30 +145,31 @@ export default function PublicProfile() {
             </ul>
           )}
         </div>
+      </div>
 
-        {/* Footer spacing */}
-<footer 
-        style={{ 
-          textAlign: "center", 
-          padding: "20px 0", 
-          color: "white", 
+      {/* Footer - Pushed to bottom by flex-grow above */}
+      <footer
+        style={{
+          textAlign: "center",
+          padding: "20px 0",
+          color: "white",
           fontSize: "14px",
-          fontWeight: "500"
+          fontWeight: "500",
+          width: "100%",
         }}
       >
         Made using{" "}
-        <a 
-          href="https://audiencesnap-r385.onrender.com/" 
-          style={{ 
-            color: "#667eea", // Indigo color to match the theme
+        <a
+          href="https://audiencesnap-r385.onrender.com/"
+          style={{
+            color: "#667eea",
             fontWeight: "700",
-            textDecoration: "underline"
+            textDecoration: "underline",
           }}
         >
           AudienceSnap
         </a>
       </footer>
-      </div>
     </div>
   );
 }
