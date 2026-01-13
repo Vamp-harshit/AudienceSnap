@@ -162,7 +162,7 @@ export default function PublicProfile() {
         <a
           href="https://audiencesnap-r385.onrender.com/"
           style={{
-            color: "FFFF00",
+            color: "#8FD3E8",
             fontWeight: "700",
             textDecoration: "underline",
           }}
