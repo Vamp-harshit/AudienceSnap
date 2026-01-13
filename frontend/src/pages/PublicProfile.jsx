@@ -150,7 +150,9 @@ export default function PublicProfile() {
         </div>
 
         {/* Footer spacing */}
-        <div className="h-12" />
+        <div className="h-12" >
+          Made using <a href="https://audiencesnap-r385.onrender.com/">AudienceSnap</a> 
+        </div>
       </div>
     </div>
   );
