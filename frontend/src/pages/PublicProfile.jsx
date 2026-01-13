@@ -24,7 +24,8 @@ export default function PublicProfile() {
     <div
       style={{
         minHeight: "83.5vh",
-        padding: "60px 24px",
+        display: "flex";
+        padding: "60px 24px 20px 24px",
         backgroundImage:
           "url('https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg')",
         backgroundSize: "cover",
