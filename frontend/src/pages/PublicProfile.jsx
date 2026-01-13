@@ -23,7 +23,7 @@ export default function PublicProfile() {
   return (
     <div
       style={{
-        minHeight: "83.5vh",
+        minHeight: "100vh",
         display: "flex";
         padding: "60px 24px 20px 24px",
         backgroundImage:
