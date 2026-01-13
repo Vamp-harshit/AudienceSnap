@@ -141,6 +141,7 @@ export default function Login() {
           >
             Register here
           </Link>
+          <br> Made with ❣️ by  <a href="https://www.linkedin.com/in/harshit-kumar-1091901b9/">Harshit</a> 
         </p>
       </form>
     </div>
